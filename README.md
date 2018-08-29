@@ -29,12 +29,12 @@ The database contains two data tables, measurement and station.
 
 Store the repository in a local folder. Double-click on hawaii_api.py and, if run correctly, the last line should read: `Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)`. Open your browser and type `http://127.0.0.1:5000/`. You should be able to see the following: 
   ```
-  Available Routes:
-/api/v1.0/precipitation
-/api/v1.0/stations
-/api/v1.0/tobs
-/api/v1.0/start_date
-/api/v1.0/start_date/end_date
+Available Routes:
+Precipitation data recorded in last two years: /api/v1.0/precipitation
+List of all recorded stations: /api/v1.0/stations
+Temperature data recorded in last two years: /api/v1.0/tobs
+Replace 'start_date' with a date in the format 'yyyy-mm-dd' for temperature data after that date: /api/v1.0/start_date
+Replace 'start_date' and 'end_date' with specific dates for temperature data in that date range: /api/v1.0/start_date/end_date
 ```
 Then, to assess precipation route, add `/api/v1.0/precipitation` at the end of `http://127.0.0.1:5000/`.
 
