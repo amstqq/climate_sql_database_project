@@ -1,6 +1,6 @@
-
 # coding: utf-8
 
+# Import dependencies
 import numpy as np
 
 import sqlalchemy
@@ -42,21 +42,23 @@ app = Flask(__name__)
 # Flask Routes
 #################################################
 
+# Index page
 @app.route("/")
 def welcome():
-    """List all available api routes."""
+    # List all available api routes
     return (
         f"Available Routes:<br/>"
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
         f"/api/v1.0/tobs<br/>"
         f"/api/v1.0/start_date<br/>"
-        f"/api/v1.0/start_date/end_date"
+        f"/api/v1.0/start_date/end_date (date format: yyyy-mm-dd)"
     )
 
+# Return precipitation data from last two years in json format
 @app.route("/api/v1.0/precipitation")
 def precipitation():
-    # Calculate the date 1 year ago from today
+    # Calculate the date 2 year ago from today
     last_year = dt.datetime.now() - dt.timedelta(days=2*365)
     # Perform a query to retrieve the data and precipitation scores
     results = session.query(Measurement.date,Measurement.prcp).filter(Measurement.date>last_year).all()
@@ -71,6 +73,7 @@ def precipitation():
 
     return jsonify(last_year_prcp)
 
+# List recorded stations in json format
 @app.route("/api/v1.0/stations")
 def stations():
     # Query all stations
@@ -81,6 +84,7 @@ def stations():
 
     return jsonify(all_stations)
 
+# Return temperature recordings in last two years in json format
 @app.route("/api/v1.0/tobs")
 def tobs():
     last_year = dt.datetime.now() - dt.timedelta(days=2*365)
@@ -95,6 +99,7 @@ def tobs():
 @app.route("/api/v1.0/<start>/<end>")
 # Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
 def temperature(start, end = None):
+    # Note that the latest data is recorded in 2017-08-23, therefore start_date cannot be later than that
     if start <= '2017-08-23':
         if end == None:
             """ calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date."""
