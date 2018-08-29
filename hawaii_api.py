@@ -48,11 +48,11 @@ def welcome():
     # List all available api routes
     return (
         f"Available Routes:<br/>"
-        f"/api/v1.0/precipitation<br/>"
-        f"/api/v1.0/stations<br/>"
-        f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/start_date<br/>"
-        f"/api/v1.0/start_date/end_date (date format: yyyy-mm-dd)"
+        f"Precipitation data recorded in last two years: /api/v1.0/precipitation<br/>"
+        f"List of all recorded stations: /api/v1.0/stations<br/>"
+        f"Temperature data recorded in last two years: /api/v1.0/tobs<br/>"
+        f"Replace 'start_date' with a date in the format 'yyyy-mm-dd' for temperature data after that date: /api/v1.0/start_date<br/>"
+        f"Replace 'start_date' and 'end_date' with specific dates for temperature data in that date range: /api/v1.0/start_date/end_date"
     )
 
 # Return precipitation data from last two years in json format
