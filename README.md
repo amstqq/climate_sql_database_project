@@ -15,7 +15,7 @@ This project also designs a Climate web application using Flask API, a micro web
 
 ## Navigation
 - climate.ipynb contains analysis of climate data from the SQL database
-- hawaii.sqlite is the database. You can use [DB Browser for SQLite](https://sqlitebrowser.org/) to view the data contained in the database.
+- hawaii.sqlite is the database. You can use [DB Browser for SQLite](https://sqlitebrowser.org/) to view the the database.
 - hawaii_api.py is Climate web APP created using Flask
 
 ## Database Description
