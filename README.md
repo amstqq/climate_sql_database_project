@@ -1,8 +1,6 @@
 # climate_sql_database_project
 
-This project uses SQLAlchemy ORM queries in Python to explore and analyze climate data of a SQL database containing temperature and precipitation data of Honolulu. Visualizations are created mostly using pandas and matplotlib. SQLAlchemy is a SQL toolkit in Python that allows control of SQL database in Python scripts.
-
-This project also designs a Climate web application using Flask API, a micro web framework written in Python. The Flask application talks to the climate database through SQLAlchemy, queries the data, and displays the results in json format.
+This project uses SQLAlchemy ORM queries in Python to explore and create visualizations of Honolulu climate database containing temperature and precipitation data. SQLAlchemy is a SQL toolkit in Python that allows control of SQL database in Python scripts. Then, a Flask API is designed to assess the climate database through SQLAlchemy and return the results in json format.
 
 ## Required Python packages
 
